@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Math Learning Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>📚 Math Learning Hub</h1>
+
+<div class="tabs">
+  <button onclick="showTab('home')">Home</button>
+  <button onclick="showTab('quiz')">Quiz</button>
+  <button onclick="showTab('exam')">Exam Mode</button>
+  <button onclick="showTab('progress')">Progress</button>
+  <button onclick="showTab('betterapp')">Better App</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="tab active">
+  <h2>🏠 Welcome</h2>
+  <p>Master math the smart way.</p>
+
+  <div class="home-cards">
+    <div class="card">
+      <h3>🧠 Quiz</h3>
+      <button onclick="showTab('quiz')">Start</button>
+    </div>
+
+    <div class="card">
+      <h3>📝 Exam</h3>
+      <button onclick="showTab('exam')">Start</button>
+    </div>
+
+    <div class="card">
+      <h3>📊 Progress</h3>
+      <button onclick="showTab('progress')">View</button>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="tab">
+
+<h2>Practice Quiz</h2>
+
+<select id="topic">
+<option value="algebra">Algebra</option>
+<option value="trig">Trigonometry</option>
+<option value="prob">Probability</option>
+</select>
+
+<button onclick="newQuestion()">New Question</button>
+
+<p id="question"></p>
+
+<input id="answer" placeholder="Answer">
+
+<div>
+<button onclick="checkAnswer()">Submit</button>
+<button onclick="showHint()">Hint</button>
+</div>
+
+<p id="feedback"></p>
+
+<p>Score: <span id="score">0</span></p>
+<p>XP: <span id="xp">0</span> | Level: <span id="level">1</span></p>
+<p>Streak: <span id="streak">0</span></p>
+
+</div>
+
+<!-- EXAM -->
+<div id="exam" class="tab">
+<h2>Exam Mode</h2>
+
+<p>Questions: <span id="examQ">0</span>/10</p>
+<p>Time: <span id="timer">0</span>s</p>
+
+<button onclick="startExam()">Start Exam</button>
+
+<p id="examQuestion"></p>
+<input id="examAnswer" placeholder="Answer">
+<button onclick="submitExam()">Submit</button>
+
+<p id="grade"></p>
+</div>
+
+<!-- PROGRESS -->
+<div id="progress" class="tab">
+<h2>Progress</h2>
+
+<p>Algebra: <span id="progAlg">0</span>%</p>
+<div class="bar"><div id="barAlg"></div></div>
+
+<p>Trig: <span id="progTrig">0</span>%</p>
+<div class="bar"><div id="barTrig"></div></div>
+
+<p>Probability: <span id="progProb">0</span>%</p>
+<div class="bar"><div id="barProb"></div></div>
+</div>
+
+<!-- BETTER APP -->
+<div id="betterapp" class="tab">
+<h2>🚀 Better Version</h2>
+
+<input id="appLink" value="https://mathdojo.base44.app" readonly>
+<br><br>
+<button onclick="copyLink()">Copy</button>
+
+<p id="copyMsg"></p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
